@@ -2,6 +2,7 @@ import Logo from "../assets/images/logo-bookmark.svg";
 import iconMenu from "../assets/images/icon-hamburger.svg";
 import iconClose from "../assets/images/icon-close.svg";
 import { useState } from "react";
+import { Button } from "react-aria-components";
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,16 +12,16 @@ const Menu = () => {
   }
 
   return (
-    <header className={isMenuOpen ? "overlay" : ""}>
+    <header className="font-rubik text-lg font-normal flex flex-row justify-between items-center p-8">
       <a href="#" className="header-logo">
         <img src={Logo} alt="Logo" />
       </a>
 
-      <button
+      <Button
         className="btn-menu mobile"
         aria-controls="primary-navigation"
         aria-expanded="false"
-        onClick={handleClick}
+        onPress={handleClick}
       >
         {isMenuOpen ? (
           <img
@@ -37,17 +38,8 @@ const Menu = () => {
             aria-hidden="false"
           />
         )}
-
-        <span className="visually-hidden">Menu</span>
-      </button>
-      <nav
-        className={
-          isMenuOpen
-            ? "menu-open primary-navigation desktop"
-            : "primary-navigation desktop"
-        }
-        id="primary-navigation"
-      >
+      </Button>
+      <nav className={`hidden`} id="primary-navigation">
         <ul aria-label="Primary" role="list">
           <li>
             <a href="">Features</a>
