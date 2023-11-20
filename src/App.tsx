@@ -16,6 +16,12 @@ import tab3 from "./assets/images/illustration-features-tab-3.svg";
 import { Button, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
+import {
+  IconArrow,
+  IconBookmark,
+  IconFacebook,
+  IconTwitter,
+} from "./components/Icons";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,10 +45,10 @@ function App() {
               for free.
             </p>
             <div className="flex flex-row gap-4">
-              <Button className="font-medium bg-primary-1 text-white p-3 rounded-md">
+              <Button className="font-medium bg-primary-1 text-white p-3 rounded-md border border-solid border-primary-1 hover:bg-white focus-visible:bg-white hover:text-primary-1 focus-visible:text-primary-1">
                 Get it on Chrome
               </Button>
-              <Button className="font-medium bg-gray-100 text-neutral-2 p-3 rounded-md">
+              <Button className="font-medium bg-gray-100 text-neutral-1 p-3 rounded-md border border-solid border-gray-100 hover:bg-white focus-visible:bg-white hover:text-gray-500 focus-visible:text-gray-500 hover:border-gray-500 focus-visible:border-gray-500">
                 Get it on Firefox
               </Button>
             </div>
@@ -61,44 +67,74 @@ function App() {
           {/* IMPORTING TABS FROM RECT ARIA COMPONENTS*/}
 
           <Tabs>
-            <TabList aria-label="Features">
-              <Tab id="Bookmarking">Simple Bookmarking</Tab>
-              <Tab id="Searching">Speedy Searching</Tab>
-              <Tab id="Sharing">Easy Sharing</Tab>
+            <TabList aria-label="Features" className="pb-8">
+              <Tab
+                id="Bookmarking"
+                className="group relative border-solid border-t border-neutral-1 py-2"
+              >
+                <span>Simple Bookmarking</span>
+                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
+              </Tab>
+              <Tab
+                id="Searching"
+                className="group relative border-solid border-b border-t border-neutral-1 py-2"
+              >
+                <span>Speedy Searching</span>
+                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
+              </Tab>
+              <Tab
+                id="Sharing"
+                className="group relative border-solid border-b border-neutral-1 py-2"
+              >
+                <span>Easy Sharing</span>
+                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
+              </Tab>
             </TabList>
-            <TabPanel id="Bookmarking">
+            <TabPanel
+              id="Bookmarking"
+              className="flex flex-col gap-4 items-center"
+            >
               <picture>
                 <img src={tab1} alt="" className="object-contain w-full" />
               </picture>
-              <h2>Bookmark in one click</h2>
-              <p>
+              <h2 className="text-neutral-2 text-2xl font-medium">
+                Bookmark in one click
+              </h2>
+              <p className="text-neutral-1">
                 Organize your bookmarks however you like. Our simple
                 drag-and-drop interface gives you complete control over how you
                 manage your favourite sites.
               </p>
-              <Button>More info</Button>
+              <Button className="hidden">More info</Button>
             </TabPanel>
-            <TabPanel id="Searching">
+            <TabPanel
+              id="Searching"
+              className="flex flex-col gap-4 items-center"
+            >
               <picture>
                 <img src={tab2} alt="" className="object-contain w-full" />
               </picture>
-              <h2>Intelligent search</h2>
-              <p>
+              <h2 className="text-neutral-2 text-2xl font-medium">
+                Intelligent search
+              </h2>
+              <p className="text-neutral-1">
                 Our powerful search feature will help you find saved sites in no
                 time at all. No need to trawl through all of your bookmarks.
               </p>
-              <Button>More info</Button>
+              <Button className="hidden">More info</Button>
             </TabPanel>
-            <TabPanel id="Sharing">
+            <TabPanel id="Sharing" className="flex flex-col gap-4 items-center">
               <picture>
                 <img src={tab3} alt="" className="object-contain w-full" />
               </picture>
-              <h2>Share your bookmarks</h2>
-              <p>
+              <h2 className="text-neutral-2 text-2xl font-medium">
+                Share your bookmarks
+              </h2>
+              <p className="text-neutral-1">
                 Easily share your bookmarks and collections with others. Create
                 a shareable link that you can send at the click of a button.
               </p>
-              <Button>More info</Button>
+              <Button className="hidden">More info</Button>
             </TabPanel>
           </Tabs>
         </section>
@@ -132,7 +168,7 @@ function App() {
               <picture>
                 <img src={dotBackground} alt="" />
               </picture>
-              <Button className="bg-primary-1 text-white w-full rounded-md p-2">
+              <Button className="bg-primary-1 text-white w-full rounded-md p-2 border border-solid border-primary-1 hover:bg-white focus-visible:bg-white hover:text-primary-1 focus-visible:text-primary-1">
                 Add & Install Extension
               </Button>
             </article>
@@ -154,7 +190,7 @@ function App() {
               <picture>
                 <img src={dotBackground} alt="" />
               </picture>
-              <Button className="bg-primary-1 text-white w-full rounded-md p-2">
+              <Button className="bg-primary-1 text-white w-full rounded-md p-2 border border-solid border-primary-1 hover:bg-white focus-visible:bg-white hover:text-primary-1 focus-visible:text-primary-1">
                 Add & Install Extension
               </Button>
             </article>
@@ -176,7 +212,7 @@ function App() {
               <picture>
                 <img src={dotBackground} alt="" />
               </picture>
-              <Button className="bg-primary-1 text-white w-full rounded-md p-2">
+              <Button className="bg-primary-1 text-white w-full rounded-md p-2 border border-solid border-primary-1 hover:bg-white focus-visible:bg-white hover:text-primary-1 focus-visible:text-primary-1">
                 Add & Install Extension
               </Button>
             </article>
@@ -196,31 +232,41 @@ function App() {
           </p>
           {/* ACCORDION FROM RADIX PRIMITIVES */}
 
-          <Accordion.Root type="multiple">
-            <Accordion.Item value="item-1">
+          <Accordion.Root type="multiple" className="flex flex-col gap-4">
+            <Accordion.Item
+              value="item-1"
+              className="group flex flex-col gap-4 py-4 border-b border-solid border-b-neutral-1"
+            >
               <Accordion.Header>
-                <Accordion.Trigger className="">
+                <Accordion.Trigger className="flex flex-row items-center gap-4">
                   <span>What is Bookmark?</span>
-                  <ChevronDownIcon className="" aria-hidden />
+                  <picture className="text-primary-1 group-data-[state='open']:text-primary-2 group-data-[state='open']:rotate-180">
+                    <IconArrow></IconArrow>
+                  </picture>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content>
-                <p>
+                <p className="text-neutral-1 text-left">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                   tincidunt justo eget ultricies fringilla. Phasellus blandit
                   ipsum quis quam ornare mattis.
                 </p>
               </Accordion.Content>
             </Accordion.Item>
-            <Accordion.Item value="item-2">
+            <Accordion.Item
+              value="item-2"
+              className="group flex flex-col gap-4 py-4 border-b border-solid border-b-neutral-1"
+            >
               <Accordion.Header>
-                <Accordion.Trigger className="">
+                <Accordion.Trigger className="flex flex-row items-center gap-4">
                   <span>How can I request a new browser?</span>
-                  <ChevronDownIcon className="" aria-hidden />
+                  <picture className="text-primary-1 group-data-[state='open']:text-primary-2 group-data-[state='open']:rotate-180">
+                    <IconArrow></IconArrow>
+                  </picture>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content>
-                <p>
+                <p className="text-neutral-1 text-left">
                   Vivamus luctus eros aliquet convallis ultricies. Mauris augue
                   massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
                   luctus eros aliquet convallis ultricies. Mauris augue massa,
@@ -230,15 +276,20 @@ function App() {
                 </p>
               </Accordion.Content>
             </Accordion.Item>
-            <Accordion.Item value="item-3">
+            <Accordion.Item
+              value="item-3"
+              className="group flex flex-col gap-4 py-4 border-b border-solid border-b-neutral-1"
+            >
               <Accordion.Header>
-                <Accordion.Trigger className="">
+                <Accordion.Trigger className="flex flex-row items-center gap-4">
                   <span>Is there a mobile app?</span>
-                  <ChevronDownIcon className="" aria-hidden />
+                  <picture className="text-primary-1 group-data-[state='open']:text-primary-2 group-data-[state='open']:rotate-180">
+                    <IconArrow></IconArrow>
+                  </picture>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content>
-                <p>
+                <p className="text-neutral-1 text-left">
                   Sed consectetur quam id neque fermentum accumsan. Praesent
                   luctus vestibulum dolor, ut condimentum urna vulputate eget.
                   Cras in ligula quis est pharetra mattis sit amet pharetra
@@ -246,15 +297,20 @@ function App() {
                 </p>
               </Accordion.Content>
             </Accordion.Item>
-            <Accordion.Item value="item-4">
+            <Accordion.Item
+              value="item-4"
+              className="group flex flex-col gap-4 py-4 border-b border-solid border-b-neutral-1"
+            >
               <Accordion.Header>
-                <Accordion.Trigger className="">
+                <Accordion.Trigger className="flex flex-row items-center gap-4">
                   <span>What about other Chromium browsers?</span>
-                  <ChevronDownIcon className="" aria-hidden />
+                  <picture className="text-primary-1 group-data-[state='open']:text-primary-2 group-data-[state='open']:rotate-180">
+                    <IconArrow></IconArrow>
+                  </picture>
                 </Accordion.Trigger>
               </Accordion.Header>
               <Accordion.Content>
-                <p>
+                <p className="text-neutral-1 text-left">
                   Integer condimentum ipsum id imperdiet finibus. Vivamus in
                   placerat mi, at euismod dui. Aliquam vitae neque eget nisl
                   gravida pellentesque non ut velit.
@@ -263,7 +319,7 @@ function App() {
             </Accordion.Item>
           </Accordion.Root>
 
-          <Button className="bg-primary-1 text-white rounded-md px-6 py-2 capitalize">
+          <Button className="bg-primary-1 text-white rounded-md px-6 py-2 capitalize border border-solid border-primary-1 hover:bg-white focus-visible:bg-white hover:text-primary-1 focus-visible:text-primary-1">
             more info
           </Button>
         </section>
@@ -281,30 +337,34 @@ function App() {
               className="w-full rounded-md px-6 py-2"
               placeholder="Enter your email address"
             />
-            <Button className="w-full rounded-md bg-primary-2 px-6 py-2">
+            <Button className="w-full rounded-md bg-primary-2 px-6 py-2 border border-solid border-primary-2 hover:bg-white hover:text-primary-2 focus-visible:bg-white focus-visible:text-primary-2">
               Contact Us
             </Button>
           </form>
         </section>
       </main>
-      <footer>
+      <footer className="bg-neutral-2 text-white flex flex-col items-center gap-8 p-8">
         <picture>
-          <img src={Logo} alt="" />
+          <IconBookmark></IconBookmark>
         </picture>
-        <ul>
-          <li>
+        <ul className="flex flex-col items-center gap-4 uppercase">
+          <li className="hover:text-primary-2 focus-visible:text-primary-2">
             <a href="">Features</a>
           </li>
-          <li>
+          <li className="hover:text-primary-2 focus-visible:text-primary-2">
             <a href="">Pricing</a>
           </li>
-          <li>
+          <li className="hover:text-primary-2 focus-visible:text-primary-2">
             <a href="">Contact</a>
           </li>
         </ul>
-        <div>
-          <img src={facebook} alt="" />
-          <img src={twitter} alt="" />
+        <div className="flex flex-row items-center gap-4">
+          <picture className="hover:text-primary-2 focus-visible:text-primary-2">
+            <IconFacebook></IconFacebook>
+          </picture>
+          <picture className="hover:text-primary-2 focus-visible:text-primary-2">
+            <IconTwitter></IconTwitter>
+          </picture>
         </div>
       </footer>
     </>
