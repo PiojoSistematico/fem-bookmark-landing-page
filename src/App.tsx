@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Logo from "./assets/images/logo-bookmark.svg";
 import Menu from "./components/Menu";
 import hero from "./assets/images/illustration-hero.svg";
 import chromeLogo from "./assets/images/logo-chrome.svg";
@@ -7,15 +6,12 @@ import firefoxLogo from "./assets/images/logo-firefox.svg";
 import operaLogo from "./assets/images/logo-opera.svg";
 
 import dotBackground from "./assets/images/bg-dots.svg";
-import facebook from "./assets/images/icon-facebook.svg";
-import twitter from "./assets/images/icon-twitter.svg";
 
 import tab1 from "./assets/images/illustration-features-tab-1.svg";
 import tab2 from "./assets/images/illustration-features-tab-2.svg";
 import tab3 from "./assets/images/illustration-features-tab-3.svg";
 import { Button, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
 import {
   IconArrow,
   IconBookmark,

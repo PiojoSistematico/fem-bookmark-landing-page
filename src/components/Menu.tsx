@@ -3,6 +3,7 @@ import iconMenu from "../assets/images/icon-hamburger.svg";
 import iconClose from "../assets/images/icon-close.svg";
 import { useState } from "react";
 import { Button } from "react-aria-components";
+import CustomModal from "./CustomModal";
 
 const Menu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Menu = () => {
         <img src={Logo} alt="Logo" />
       </a>
 
-      <Button
+      {/* <Button
         className="btn-menu mobile"
         aria-controls="primary-navigation"
         aria-expanded="false"
@@ -38,7 +39,10 @@ const Menu = () => {
             aria-hidden="false"
           />
         )}
-      </Button>
+      </Button> */}
+
+      <CustomModal></CustomModal>
+
       <nav className={`hidden`} id="primary-navigation">
         <ul aria-label="Primary" role="list">
           <li>
