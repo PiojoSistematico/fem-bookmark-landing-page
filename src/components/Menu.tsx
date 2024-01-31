@@ -1,8 +1,5 @@
 import Logo from "../assets/images/logo-bookmark.svg";
-import iconMenu from "../assets/images/icon-hamburger.svg";
-import iconClose from "../assets/images/icon-close.svg";
 import { useState } from "react";
-import { Button } from "react-aria-components";
 import CustomModal from "./CustomModal";
 
 const Menu = () => {

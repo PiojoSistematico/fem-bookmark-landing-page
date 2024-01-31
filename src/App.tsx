@@ -27,9 +27,9 @@ function App() {
       <Menu></Menu>
       <main className="font-rubik text-lg font-normal">
         <section title="hero-section" className="p-8">
-          <picture className=" relative overflow-hidden">
+          <picture className="relative overflow-hidden w-80 h-64">
             <img src={hero} alt="" className="object-contain w-full z-10" />
-            <div className="absolute w-40 h-40 bg-primary-1 rounded-l-3xl left-1/2 top-1/2 z-0"></div>
+            <div className="absolute w-96 h-40 bg-primary-1 rounded-l-[100px] -right-12 top-28 z-0"></div>
           </picture>
           <div className=" flex flex-col gap-8 text-center items-center">
             <h1 className="text-neutral-2 text-3xl font-medium">
