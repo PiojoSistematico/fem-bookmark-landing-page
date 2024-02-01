@@ -18,6 +18,7 @@ import {
   IconFacebook,
   IconTwitter,
 } from "./components/Icons";
+import CustomForm from "./components/CustomForm";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -327,16 +328,7 @@ function App() {
           <p className="text-xl font-medium">
             Stay up-to-date with what we’re doing
           </p>
-          <form action="" className="flex flex-col gap-4 items-center w-full">
-            <input
-              type="email"
-              className="w-full rounded-md px-6 py-2"
-              placeholder="Enter your email address"
-            />
-            <Button className="w-full rounded-md bg-primary-2 px-6 py-2 border border-solid border-primary-2 hover:bg-white hover:text-primary-2 focus-visible:bg-white focus-visible:text-primary-2">
-              Contact Us
-            </Button>
-          </form>
+          <CustomForm></CustomForm>
         </section>
       </main>
       <footer className="bg-neutral-2 text-white flex flex-col items-center gap-8 p-8">
