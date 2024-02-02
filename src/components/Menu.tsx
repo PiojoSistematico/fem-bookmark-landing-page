@@ -15,33 +15,10 @@ const Menu = () => {
         <img src={Logo} alt="Logo" />
       </a>
 
-      {/* <Button
-        className="btn-menu mobile"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-        onPress={handleClick}
-      >
-        {isMenuOpen ? (
-          <img
-            className="icon-close"
-            src={iconClose}
-            alt="Close Menu"
-            aria-hidden="false"
-          />
-        ) : (
-          <img
-            className="icon-hamburger"
-            src={iconMenu}
-            alt="Open Menu"
-            aria-hidden="false"
-          />
-        )}
-      </Button> */}
-
       <CustomModal></CustomModal>
 
-      <nav className={`hidden`} id="primary-navigation">
-        <ul aria-label="Primary" role="list">
+      <nav className="hidden md:flex md:flex-row md:gap-8 md:items-center">
+        <ul className="flex flex-row gap-4 items-center">
           <li>
             <a href="">Features</a>
           </li>
@@ -53,10 +30,10 @@ const Menu = () => {
           <li>
             <a href="">Contact</a>
           </li>
-          <li>
-            <button>Login</button>
-          </li>
         </ul>
+        <button className="bg-primary-2 text-white px-4 py-1 rounded-md">
+          Login
+        </button>
       </nav>
     </header>
   );

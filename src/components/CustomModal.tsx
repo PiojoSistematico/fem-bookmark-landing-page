@@ -17,7 +17,7 @@ import {
 const CustomModal = () => {
   return (
     <DialogTrigger>
-      <Button>
+      <Button className="md:hidden">
         <IconMenu></IconMenu>
       </Button>
       <ModalOverlay className="bg-red-500 w-screen h-screen">

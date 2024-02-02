@@ -7,10 +7,7 @@ import operaLogo from "./assets/images/logo-opera.svg";
 
 import dotBackground from "./assets/images/bg-dots.svg";
 
-import tab1 from "./assets/images/illustration-features-tab-1.svg";
-import tab2 from "./assets/images/illustration-features-tab-2.svg";
-import tab3 from "./assets/images/illustration-features-tab-3.svg";
-import { Button, Tab, TabList, TabPanel, Tabs } from "react-aria-components";
+import { Button } from "react-aria-components";
 import * as Accordion from "@radix-ui/react-accordion";
 import {
   IconArrow,
@@ -19,6 +16,7 @@ import {
   IconTwitter,
 } from "./components/Icons";
 import CustomForm from "./components/CustomForm";
+import CustomTabs from "./components/CustomTabs";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,12 +25,12 @@ function App() {
     <>
       <Menu></Menu>
       <main className="font-rubik text-lg font-normal">
-        <section title="hero-section" className="p-8">
-          <picture className="relative overflow-hidden w-80 h-64">
+        <section title="hero-section" className="p-8 md:grid md:grid-cols-2">
+          <picture className="relative overflow-hidden w-80 h-64 md:order-2">
             <img src={hero} alt="" className="object-contain w-full z-10" />
             <div className="absolute w-96 h-40 bg-primary-1 rounded-l-[100px] -right-12 top-28 z-0"></div>
           </picture>
-          <div className=" flex flex-col gap-8 text-center items-center">
+          <div className=" flex flex-col gap-8 text-center items-center md:order-1 md:items-start md:text-left">
             <h1 className="text-neutral-2 text-3xl font-medium">
               A Simple Bookmark Manager
             </h1>
@@ -61,79 +59,8 @@ function App() {
             favourite websites. Your bookmarks sync between your devices so you
             can access them on the go.
           </p>
-          {/* IMPORTING TABS FROM RECT ARIA COMPONENTS*/}
 
-          <Tabs>
-            <TabList aria-label="Features" className="pb-8">
-              <Tab
-                id="Bookmarking"
-                className="group relative border-solid border-t border-neutral-1 py-2"
-              >
-                <span>Simple Bookmarking</span>
-                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
-              </Tab>
-              <Tab
-                id="Searching"
-                className="group relative border-solid border-b border-t border-neutral-1 py-2"
-              >
-                <span>Speedy Searching</span>
-                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
-              </Tab>
-              <Tab
-                id="Sharing"
-                className="group relative border-solid border-b border-neutral-1 py-2"
-              >
-                <span>Easy Sharing</span>
-                <div className="hidden bg-primary-2 h-1 w-32 absolute bottom-0 left-1/2 -translate-x-1/2 group-data-[selected]:block"></div>
-              </Tab>
-            </TabList>
-            <TabPanel
-              id="Bookmarking"
-              className="flex flex-col gap-4 items-center"
-            >
-              <picture>
-                <img src={tab1} alt="" className="object-contain w-full" />
-              </picture>
-              <h2 className="text-neutral-2 text-2xl font-medium">
-                Bookmark in one click
-              </h2>
-              <p className="text-neutral-1">
-                Organize your bookmarks however you like. Our simple
-                drag-and-drop interface gives you complete control over how you
-                manage your favourite sites.
-              </p>
-              <Button className="hidden">More info</Button>
-            </TabPanel>
-            <TabPanel
-              id="Searching"
-              className="flex flex-col gap-4 items-center"
-            >
-              <picture>
-                <img src={tab2} alt="" className="object-contain w-full" />
-              </picture>
-              <h2 className="text-neutral-2 text-2xl font-medium">
-                Intelligent search
-              </h2>
-              <p className="text-neutral-1">
-                Our powerful search feature will help you find saved sites in no
-                time at all. No need to trawl through all of your bookmarks.
-              </p>
-              <Button className="hidden">More info</Button>
-            </TabPanel>
-            <TabPanel id="Sharing" className="flex flex-col gap-4 items-center">
-              <picture>
-                <img src={tab3} alt="" className="object-contain w-full" />
-              </picture>
-              <h2 className="text-neutral-2 text-2xl font-medium">
-                Share your bookmarks
-              </h2>
-              <p className="text-neutral-1">
-                Easily share your bookmarks and collections with others. Create
-                a shareable link that you can send at the click of a button.
-              </p>
-              <Button className="hidden">More info</Button>
-            </TabPanel>
-          </Tabs>
+          <CustomTabs></CustomTabs>
         </section>
 
         <section
